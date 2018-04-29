@@ -4,13 +4,13 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 public class Person {
-
-    public Person(String name, String lastName, Date birthDate, Timestamp time) {
-        this.name = name;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.time = time;
-    }
+//
+//    public Person(String name, String lastName, Date birthDate, Timestamp time) {
+//        this.name = name;
+//        this.lastName = lastName;
+//        this.birthDate = birthDate;
+//        this.time = time;
+//    }
 
     public Person(String name, String lastName) {
         this.name = name;
