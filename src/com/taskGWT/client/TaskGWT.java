@@ -12,7 +12,7 @@ public class TaskGWT implements EntryPoint {
 
     public void onModuleLoad() {
         ItemsList itemsList = new ItemsList();
-
+        
         RootPanel.get("content").add(itemsList);
     }
 

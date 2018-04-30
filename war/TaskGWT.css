@@ -9,3 +9,15 @@ h1 {
 body, td, a, div, .p {
     font-family: arial, sans-serif
 }
+
+.gwt-DateBox{
+    border: 2px inset #EBE9ED;
+}
+
+#content{
+    width: 100%;
+}
+
+.buttons{
+    width: 50%;
+}

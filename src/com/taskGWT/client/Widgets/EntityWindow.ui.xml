@@ -3,6 +3,12 @@
     <g:HTMLPanel>
         <g:TextBox ui:field="name"/>
         <g:TextBox ui:field="lastName"/>
+        <g:VerticalPanel ui:field="birthDate"/>
+        <g:HorizontalPanel>
+            <g:IntegerBox ui:field="hoursBox"/>
+            <g:Label>:</g:Label>
+            <g:IntegerBox ui:field="minutesBox"/>
+        </g:HorizontalPanel>
         <g:Button ui:field="submit">SUBMIT</g:Button>
     </g:HTMLPanel>
 </ui:UiBinder>

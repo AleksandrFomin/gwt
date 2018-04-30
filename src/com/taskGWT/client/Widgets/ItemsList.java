@@ -12,6 +12,8 @@ import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.MultiSelectionModel;
 import com.taskGWT.client.Entities.Person;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -23,8 +25,8 @@ public class ItemsList extends Composite implements IsWidget {
     private static ItemsListUiBinder ourUiBinder = GWT.create(ItemsListUiBinder.class);
 
     private static final List<Person> PEOPLE = Arrays.asList(
-            new Person("Aleksandr", "Fomin"),
-            new Person("Roman", "Fomin"));
+            new Person("Aleksandr", "Fomin", new Date(100000000), new Time(100)),
+            new Person("Roman", "Fomin", new Date(2000), new Time(400)));
 
     private PersonCell personCell;
     private CellList<Person> cellList;
@@ -49,18 +51,14 @@ public class ItemsList extends Composite implements IsWidget {
         deleteBtn.setEnabled(false);
 
         personCell = new PersonCell();
-
         cellList = new CellList<>(personCell);
-
         entityWindow = new EntityWindow(this);
-
         dataProvider = new ListDataProvider<>();
+
         dataProvider.addDataDisplay(cellList);
 
         data = dataProvider.getList();
-        for (Person p : PEOPLE) {
-            data.add(p);
-        }
+        data.addAll(PEOPLE);
 
         selectionModel = new MultiSelectionModel<>();
         cellList.setSelectionModel(selectionModel);

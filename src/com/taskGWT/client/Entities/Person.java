@@ -1,11 +1,12 @@
 package com.taskGWT.client.Entities;
 
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Date;
 
 public class Person {
 
-    public Person(String name, String lastName, Date birthDate, Timestamp time) {
+    public Person(String name, String lastName, Date birthDate, Time time) {
         this.name = name;
         this.lastName = lastName;
         this.birthDate = birthDate;
@@ -23,7 +24,7 @@ public class Person {
 
     private Date birthDate;
 
-    private Timestamp time;
+    private Time time;
 
     public String getName() {
         return name;
@@ -49,11 +50,11 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    public Timestamp getTime() {
+    public Time getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(Time time) {
         this.time = time;
     }
 }
