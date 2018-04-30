@@ -11,10 +11,8 @@ import com.taskGWT.client.Widgets.ItemsList;
 public class TaskGWT implements EntryPoint {
 
     public void onModuleLoad() {
-        final Label label = new Label("EXAMPLE");
         ItemsList itemsList = new ItemsList();
 
-        RootPanel.get("content").add(label);
         RootPanel.get("content").add(itemsList);
     }
 

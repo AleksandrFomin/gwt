@@ -1,8 +1,11 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
-        <label>QWERTY</label>
-        <g:HTMLPanel ui:field="listOfEntities"/>
-        <g:HTMLPanel ui:field="entWindow"/>
+        <g:HorizontalPanel ui:field="horizontalPanel">
+            <g:VerticalPanel ui:field="listPanel">
+                <g:Button ui:field="deleteBtn">DELETE</g:Button>
+                <g:Button ui:field="addBtn">ADD</g:Button>
+            </g:VerticalPanel>
+        </g:HorizontalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>

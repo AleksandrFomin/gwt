@@ -3,6 +3,6 @@
     <g:HTMLPanel>
         <g:TextBox ui:field="name"/>
         <g:TextBox ui:field="lastName"/>
-        <g:Button ui:field="update">UPDATE</g:Button>
+        <g:Button ui:field="submit">SUBMIT</g:Button>
     </g:HTMLPanel>
 </ui:UiBinder>

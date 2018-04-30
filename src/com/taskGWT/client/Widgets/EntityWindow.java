@@ -39,7 +39,13 @@ public class EntityWindow extends Composite implements IsWidget {
         lastName.setText(person.getLastName());
     }
 
-    @UiHandler("update")
+    public void addEntity(){
+        setVisible(true);
+        name.setText(null);
+        lastName.setText(null);
+    }
+
+    @UiHandler("submit")
     public void updateClick(ClickEvent event) {
         int index = itemsList.getData().indexOf(person);
         itemsList.getData().get(index).setName(name.getText());
