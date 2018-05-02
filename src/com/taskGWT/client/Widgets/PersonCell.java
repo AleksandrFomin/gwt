@@ -8,11 +8,9 @@ public class PersonCell extends AbstractCell<Person> {
     @Override
     public void render(Context context, Person value, SafeHtmlBuilder sb) {
         if (value != null) {
-            sb.appendHtmlConstant("<table><tr><td>");
-            sb.appendEscaped(value.getLastName());
-            sb.appendHtmlConstant("</td></tr><tr><td>");
-            sb.appendEscaped(value.getName());
-            sb.appendHtmlConstant("</td></tr></table>");
+            sb.appendHtmlConstant("<div class='cell'>");
+            sb.appendEscaped(value.getLastName()+" "+ value.getName());
+            sb.appendHtmlConstant("</div>");
         }
     }
 }

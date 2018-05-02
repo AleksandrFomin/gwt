@@ -6,6 +6,7 @@ import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.datepicker.client.DateBox;
 import com.taskGWT.client.Entities.Person;
@@ -36,6 +37,8 @@ public class EntityWindow extends Composite implements IsWidget {
     VerticalPanel birthDate;
     @UiField
     IntegerBox minutesBox;
+    @UiField
+    Button submit;
 
     public EntityWindow(ItemsList itemsList) {
         initWidget(ourUiBinder.createAndBindUi(this));
@@ -45,8 +48,12 @@ public class EntityWindow extends Composite implements IsWidget {
     }
 
     private void init() {
+        submit.setStyleName("buttons");
+        submit.addStyleName("submitBtn");
         DateTimeFormat dateTimeFormat = DateTimeFormat.getFormat("dd.MM.yyyy");
         dateBox = new DateBox();
+        dateBox.setWidth("150px");
+        dateBox.addStyleName("simple-input");
         dateBox.setFormat(new DateBox.DefaultFormat(dateTimeFormat));
         birthDate.add(dateBox);
     }
@@ -69,10 +76,23 @@ public class EntityWindow extends Composite implements IsWidget {
         setVisible(true);
         name.setText(null);
         lastName.setText(null);
+        dateBox.setValue(null);
+        hoursBox.setText(null);
+        minutesBox.setText(null);
     }
 
     @UiHandler("submit")
     public void updateClick(ClickEvent event) {
+        if(name.getText()==null || lastName.getText()==null ||
+                dateBox.getValue()==null || hoursBox.getValue()==null || minutesBox.getValue()==null){
+            Window.alert("Empty fields are not allowed");
+            return;
+        }
+        if(hoursBox.getValue()<0 || hoursBox.getValue()>23 ||
+                minutesBox.getValue()<0 || minutesBox.getValue()>59){
+            Window.alert("Incorrect time");
+            return;
+        }
         if (isChange) {
             int index = itemsList.getData().indexOf(person);
             itemsList.getData().get(index).setName(name.getText());

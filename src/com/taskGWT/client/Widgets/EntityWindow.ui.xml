@@ -1,14 +1,17 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
     <g:HTMLPanel>
-        <g:TextBox ui:field="name"/>
-        <g:TextBox ui:field="lastName"/>
-        <g:VerticalPanel ui:field="birthDate"/>
-        <g:HorizontalPanel>
-            <g:IntegerBox ui:field="hoursBox"/>
-            <g:Label>:</g:Label>
-            <g:IntegerBox ui:field="minutesBox"/>
-        </g:HorizontalPanel>
-        <g:Button ui:field="submit">SUBMIT</g:Button>
+        <g:VerticalPanel>
+            <g:Label width="50px" addStyleNames="labels">Имя</g:Label><g:TextBox ui:field="name" width="150px" addStyleNames="simple-input"/>
+            <g:Label width="50px">Фамилия</g:Label><g:TextBox ui:field="lastName" width="150px" addStyleNames="simple-input"/>
+            <g:Label>Дата рождения</g:Label>
+            <g:VerticalPanel ui:field="birthDate"/>
+            <g:HorizontalPanel>
+                <g:IntegerBox ui:field="hoursBox" width="70px" addStyleNames="simple-input"/>
+                <g:Label width="10px">:</g:Label>
+                <g:IntegerBox ui:field="minutesBox" width="70px" addStyleNames="simple-input"/>
+            </g:HorizontalPanel>
+            <g:Button ui:field="submit">SUBMIT</g:Button>
+        </g:VerticalPanel>
     </g:HTMLPanel>
 </ui:UiBinder>
